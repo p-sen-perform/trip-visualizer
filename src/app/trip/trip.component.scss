@@ -1,0 +1,109 @@
+.app-header {
+    text-align: center;
+    margin-bottom: 20px;
+  
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin: 0;
+    }
+  
+    p {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-top: 5px;
+    }
+  }
+  
+.trip-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  
+    input {
+      padding: 6px;
+      font-size: 14px;
+    }
+  
+    button {
+      padding: 6px 12px;
+      font-weight: bold;
+    }
+  }
+  
+  .trip-visualization {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+  
+    .level {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+  
+    .level-1 {
+      background: #f0f8ff;
+    }
+  
+    .level-2 {
+      background: #fff8dc;
+      font-style: italic;
+    }
+  
+    .trip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+  
+      .dot {
+        width: 10px;
+        height: 10px;
+        background: #333;
+        border-radius: 50%;
+        margin-bottom: 5px;
+      }
+  
+      .label {
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+      }
+  
+      .line {
+        height: 2px;
+        width: 60px;
+        background: #999;
+        margin-top: 5px;
+      }
+  
+      .straight {
+        background: linear-gradient(to right, #36a, #6af);
+      }
+  
+      &.arrow .line::after {
+        content: '→';
+        position: absolute;
+        right: -12px;
+        top: 0;
+        font-size: 14px;
+        color: #888;
+      }
+  
+      .curved {
+        width: 80px;
+        height: 20px;
+        border: 2px solid #ffa500;
+        border-top: none;
+        border-right: none;
+        border-radius: 0 0 40px 0;
+        transform: rotate(331deg);
+        margin-top: 17px;
+      }
+    }
+  }
+  

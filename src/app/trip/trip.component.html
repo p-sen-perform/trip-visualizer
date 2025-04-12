@@ -1,1 +1,35 @@
-<p>trip works!</p>
+<div class="app-header">
+    <h1>Trip Visualizer</h1>
+    <p>Track and display trips by levels — continuous and repeated paths</p>
+  </div>
+  
+
+<div class="trip-form">
+    <input [(ngModel)]="startPoint" placeholder="Start Point" />
+    <input [(ngModel)]="endPoint" placeholder="End Point" />
+    <button (click)="addTrip()">Add Trip</button>
+  </div>
+  
+  <div class="trip-visualization">
+    <div class="level level-1">
+      <ng-container *ngFor="let trip of trips; let i = index">
+        <div class="trip-item" *ngIf="trip.level === 1" [class.arrow]="i > 0 && trips[i - 1].end !== trip.start">
+          <span class="dot"></span>
+          <span class="label">{{ trip.start }} - {{ trip.end }}</span>
+          <div class="line straight"></div>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="level level-2">
+      <ng-container *ngFor="let trip of trips; let i = index">
+        <div class="trip-item" *ngIf="trip.level === 2">
+          <span class="dot"></span>
+          <span class="label">{{ trip.start }} - {{ trip.end }}</span>
+          <div class="line curved"></div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  
+  
